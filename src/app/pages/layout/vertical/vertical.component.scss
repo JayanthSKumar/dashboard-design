@@ -1,0 +1,85 @@
+/* Sidebar styling */
+.sidebar {
+    width: 100%;
+    background-color: #ffff;
+    color: #333;
+    font-family: Arial, sans-serif;
+    padding: 10px 20px;
+    height: 100%;
+    border-right:1.5px solid rgb(233, 230, 230) ;
+  }
+  
+  .profile {
+    text-align: center;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding-left: 15px;
+  }
+  
+  .avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  
+  h4 {
+    margin: 0;
+    font-size: 14px;
+    // font-weight: bold;
+  }
+  
+  .menu-section h5 {
+    font-size: 14px;
+    // text-transform: uppercase;
+    margin: 20px 0 10px 15px;
+    color: #999;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    display: flex;
+    align-items: center;
+    padding: 8px 15px;
+    margin-bottom: 5px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  li:hover,
+  li.active {
+    background-color: #eaeaea;
+    gap: 0.3rem;
+  }
+  
+  li span.material-icons {
+    font-size: 18px;
+    margin-right: 10px;
+    color: #666;
+    transition: all 0.2s;
+  }
+  
+  li span.menu-name {
+    font-size: 14px;
+    margin-right: 10px;
+    color: #666;
+    transition: all 0.2s;
+  }
+
+  li.active span.material-icons,
+  li:hover span.material-icons {
+    color: #333;
+  }
+  
+  li.active span {
+    // font-weight: bold;
+    color: #333;
+  }
+  

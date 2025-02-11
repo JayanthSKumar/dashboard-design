@@ -1,0 +1,13 @@
+<div class="layout">
+    <div class="vertical-nav">
+        <app-vertical></app-vertical>
+    </div>
+    <div class="content">
+        <div class="content-main" [ngStyle]="{ 'width': isNavbarToggled ? '80%' : '100%' }">
+            <app-horizontal    
+            (toggleChange)="onToggleChange($event)"></app-horizontal>
+            <router-outlet/>
+        </div>
+        <app-notification *ngIf="isNavbarToggled" class="notification-content"></app-notification>
+    </div>
+</div>

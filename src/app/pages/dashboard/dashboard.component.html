@@ -1,0 +1,261 @@
+<div class="dashboard-container">
+    
+    <div class="card-container">
+
+        <div class="card">
+          <div class="product-content">
+            <div class="icon-container" style="background-color: #E7E7FF;">
+              <mat-icon class="icon" style="color: #6366f1;">shopping_cart</mat-icon>
+              <!-- <span class="percentage">+22% <i class="arrow-up"></i></span> -->
+            </div>
+            <span class="order-percentage">+22%</span>
+
+          </div>
+            
+          <div class="content">
+            <h2 class="order-count">155k</h2>
+            <p class="order-label">Total Orders</p>
+          </div>
+          <div class="footer">
+            <span class="time-frame">Last 4 Month</span>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="product-content">
+            <div class="icon-container" style="background-color: #E8FADD;">
+              <mat-icon class="icon" style="color: #72E128;">shopping_bag</mat-icon>
+              <!-- <span class="percentage">+22% <i class="arrow-up"></i></span> -->
+            </div>
+            <span class="order-percentage">+38%</span>
+
+          </div>
+            
+          <div class="content">
+            <h2 class="order-count">13.4</h2>
+            <p class="order-label">Total Sales</p>
+          </div>
+          <div class="footer">
+            <span class="time-frame">Last 6 Month</span>
+          </div>
+        </div>
+    
+        <div class="card">
+            <div class="content">
+              <h2>$88.5k <span class="negative">-18%</span></h2>
+              <p>Total Profit</p>
+            </div>
+            <div class="chart-container">
+              <canvas
+                baseChart
+                [data]="barChartData"
+                [options]="barChartOptions"
+                [type]="barChartType">
+              </canvas>
+            </div>
+          </div>
+          
+          
+          <div class="card">
+            <div class="content">
+              <h2>$27.9k <span class="positive">+16%</span></h2>
+              <p>Total Growth</p>
+            </div>
+            <div class="chart-container">
+                <div class="chart-overlay">
+                    <span>12%</span>
+                </div>
+                <!-- <div class="doughnut-container"> -->
+                    <canvas
+                        baseChart
+                        [data]="doughnutChartData"
+                        [options]="doughnutChartOptions"
+                        [type]="doughnutChartType">
+                    </canvas>
+                <!-- </div> -->
+            </div>
+          </div>
+
+    </div>
+
+    <div class="users-container">
+      <div class="userschart-container">
+        <div class="tab-container">
+          <div class="tabs">
+            <span 
+              (click)="switchTab('users')" 
+              [ngClass]="{'active': activeTab === 'users'}"
+            >Total Users</span>
+            
+            <span 
+              (click)="switchTab('projects')" 
+              [ngClass]="{'active': activeTab === 'projects'}"
+            >Total Projects</span>
+          </div>
+        </div>
+        
+        <div echarts [options]="chartOptions" class="users-chart"></div>
+      </div>
+
+      <div class="traffic-card">
+        <h3>Traffic by Website</h3>
+        <div class="traffic-container">
+          <div *ngFor="let item of trafficData" class="traffic-row">
+            <span class="site-name">{{ item.name }}</span>
+            <div class="bar-container">
+              <div class="bar dark" [ngStyle]="{ 'width': item.width }"></div>
+              <div class="bar medium"></div>
+              <div class="bar light"></div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+
+    </div>
+
+
+    <div class="third-row-container">
+
+      <div class="reviews-card">
+
+        <div class="card-header">
+          <div class="title">
+            <div>
+              <h3>Customer Reviews</h3>
+              <p>Messages</p>
+            </div>
+          </div>
+          <button class="menu-btn">⋮</button>
+        </div>
+      
+        <div class="review-list">
+          <div *ngFor="let review of reviews" class="review-item">
+            <div class="review-header">
+              <div >
+                <span class="review-name">{{ review.name }}</span>
+                <span class="review-time">{{ review.time }}</span>
+              </div>
+              <div class="review-rating">
+                <span class="star">⭐</span>
+                <span>{{ review.rating }}/5</span>
+              </div>
+              
+            </div>
+            <p class="review-comment">{{ review.comment }}</p>
+          </div>
+        </div>
+      
+        <button class="see-all-btn">
+          SEE ALL REVIEWS →
+        </button>
+
+      </div>
+
+      <div class="donut-container">
+
+        <div class="donut-card">
+          <div class="donut-card-header">
+            <div class="donut-card-title">
+              <h3>Spendings</h3>
+              <p>Payments</p>
+            </div>
+            <button class="menu-btn">⋮</button>
+          </div>
+        
+          <!-- Donut Chart -->
+          <div class="donut-chart-container">
+            <ngx-charts-pie-chart
+            [view]="view"
+            [results]="spendings"
+            [scheme]="colorScheme"
+            [animations]="animations"
+            [doughnut]="true"
+            [labels]="true"
+            [arcWidth]="0.5"
+            >
+            ></ngx-charts-pie-chart>
+          </div>
+        
+          <!-- Legends -->
+          <div class="legends">
+            <div class="legend-item">
+              <span class="legend-color blue"></span> SERVER (20%)
+            </div>
+            <div class="legend-item">
+              <span class="legend-color green"></span> HOSTING (40%)
+            </div>
+          </div>
+          <div class="legends">
+            <div class="legend-item">
+              <span class="legend-color orange"></span> SERVICES (15%)
+            </div>
+            <div class="legend-item">
+              <span class="legend-color gray"></span> OTHERS (15%)
+            </div>
+          </div>
+        
+          <button class="see-all-btn">SEE DETAILS →</button>
+        </div>        
+
+      </div>
+
+      
+
+    </div>
+
+    <!-- <div class="best-selling-container">
+      <h3>Best Selling Product</h3>
+      <ngx-slick-carousel #slickModal="slick-carousel" class="carousel" [config]="slideConfig">
+        <div ngxSlickItem *ngFor="let product of bestProducts" class="product-card">
+          <div class="image-placeholder">
+            <div class="sale-badge" *ngIf="product.sale">Sale</div>
+          </div>
+          <h4>{{ product.name }}</h4>
+          <div class="price">
+            <span class="old-price">${{ product.oldPrice }}</span>
+            <span class="new-price">${{ product.newPrice }}</span>
+          </div>
+          <div class="rating">
+            <span *ngFor="let star of [1,2,3,4,5]; let i = index">
+              <span *ngIf="i < product.rating; else emptyStar">⭐</span>
+              <ng-template #emptyStar>☆</ng-template>
+            </span>
+          </div>
+        </div>
+      </ngx-slick-carousel>
+    </div> -->
+       
+
+    <div class="products-container">
+      <div class="header">
+        <h2>Products</h2>
+        <mat-icon>more_vert</mat-icon>
+      </div>
+    
+      <div class="table">
+        <div class="table-header">
+          <span>Info</span>
+          <span>Date</span>
+          <span>Amount</span>
+          <span>Status</span>
+        </div>
+
+        <!-- <div class="product-lists"> -->
+          <div class="table-row" *ngFor="let product of products">
+            <div class="info">
+              <img src="https://cdn-icons-png.flaticon.com/512/219/219983.png" alt="{{ product.name }}" />
+              <span class="name">{{ product.name }}</span>
+            </div>
+            <div class="date">{{ product.date }}</div>
+            <div class="amount">{{ product.amount }}</div>
+            <div class="status">
+              <span [ngClass]="product.statusClass">{{ product.status }}</span>
+            </div>
+          </div>
+        <!-- </div> -->
+        
+      </div>
+    </div>
+    
+</div>

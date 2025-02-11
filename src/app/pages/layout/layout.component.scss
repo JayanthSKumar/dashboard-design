@@ -1,0 +1,28 @@
+:host {
+    display: block;
+    transition: width 0.3s ease-in-out; // Smooth animation
+  }
+  
+
+.layout {
+    width: 100vw;
+    display: flex;
+}
+
+.vertical-nav{
+    width: 15vw;
+}
+
+.content{
+    display: flex;
+    width: 85vw;
+}
+
+.content-main{
+    // width: 78%;
+}
+
+.notification-content{
+    display: flex;
+    width: 20%;
+}

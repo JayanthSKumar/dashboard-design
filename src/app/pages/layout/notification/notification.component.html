@@ -1,0 +1,32 @@
+<div class="container">
+    <h3>Notifications</h3>
+    <ul>
+      <li *ngFor="let notification of notifications">
+        <mat-icon>{{ notification.icon }}</mat-icon>
+        <div style="display: flex; flex-direction: column;">
+            <span>{{ notification.text }}</span>
+            <small>{{ notification.time }}</small>
+        </div>        
+      </li>
+    </ul>
+  
+    <h3>Activities</h3>
+    <ul>
+      <li *ngFor="let activity of activities">
+        <img [src]="activity.img" alt="User Image" />
+        <div style="display: flex; flex-direction: column;">
+            <span>{{ activity.text }}</span>
+            <small>{{ activity.time }}</small>
+        </div>
+        
+      </li>
+    </ul>
+  
+    <h3>Recent Contacts</h3>
+    <ul>
+      <li *ngFor="let contact of contacts">
+        <img [src]="contact.img" alt="User Image" />
+        <span>{{ contact.name }}</span>
+      </li>
+    </ul>
+  </div>
