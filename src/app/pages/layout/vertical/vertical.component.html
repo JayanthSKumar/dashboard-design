@@ -11,7 +11,7 @@
           [class.active]="item.selected"
           (click)="onMenuClick(item)"
         >
-          <span class="material-icons">{{ item.icon }}</span>
+          <span class="material-icons" [ngClass]="{'small-icon': item.icon == 'fiber_manual_record'}">{{ item.icon }}</span>
           <span class="menu-name">{{ item.name }}</span>
         </li>
       </ul>

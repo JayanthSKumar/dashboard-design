@@ -13,8 +13,8 @@ export class VerticalComponent {
     {
       section: 'Favorites',
       items: [
-        { name: 'Overview', icon: 'dot', selected: false },
-        { name: 'Projects', icon: 'dot', selected: false }
+        { name: 'Overview', icon: 'fiber_manual_record', selected: false },
+        { name: 'Projects', icon: 'fiber_manual_record', selected: false }
       ]
     },
     {

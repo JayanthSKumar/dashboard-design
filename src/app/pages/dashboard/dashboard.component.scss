@@ -1,104 +1,3 @@
-// .dashboard-container {
-//     width: 100%;
-// }
-
-// .dashboard {
-//     font-family: Arial, sans-serif;
-//     padding: 20px;
-//     color: #333;
-//   }
-  
-//   .header {
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: center;
-//     margin-bottom: 20px;
-//   }
-  
-//   .header h2 {
-//     font-size: 24px;
-//     font-weight: bold;
-//   }
-  
-//   .dropdown {
-//     display: flex;
-//     align-items: center;
-//     color: #666;
-//     font-size: 14px;
-//   }
-  
-//   .dropdown .material-icons {
-//     font-size: 18px;
-//     margin-left: 5px;
-//   }
-  
-//   .cards {
-//     display: grid;
-//     grid-template-columns: repeat(4, 1fr);
-//     gap: 20px;
-//   }
-  
-//   .card {
-//     background-color: #fff;
-//     border: 1px solid #eaeaea;
-//     border-radius: 10px;
-//     padding: 15px;
-//     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-//     text-align: center;
-//   }
-  
-//   .card-header {
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: center;
-//     margin-bottom: 15px;
-//   }
-  
-//   .card-header .icon {
-//     font-size: 36px;
-//     padding: 10px;
-//     background-color: #f0f7ff;
-//     color: #007bff;
-//     border-radius: 50%;
-//   }
-  
-//   .card-header .growth {
-//     font-size: 14px;
-//     display: flex;
-//     align-items: center;
-//   }
-  
-//   .growth.positive {
-//     color: #28a745;
-//   }
-  
-//   .growth.negative {
-//     color: #ff5b5b;
-//   }
-  
-//   .card-content h3 {
-//     font-size: 22px;
-//     margin: 10px 0;
-//   }
-  
-//   .card-content p {
-//     font-size: 14px;
-//     color: #999;
-//   }
-  
-//   .card-footer {
-//     font-size: 12px;
-//     color: #666;
-//     background-color: #f7f7f7;
-//     padding: 5px 10px;
-//     border-radius: 5px;
-//     display: inline-block;
-//   }
-  
-//   .chart-container {
-//     height: 100px;
-//   }
-
 .dashboard-container {
     width: 100%;
     padding: 2.5rem 2.2rem;
@@ -286,7 +185,7 @@
 .traffic-card {
   background: white;
   border-radius: 8px;
-  padding: 16px;
+  padding: 1.5rem;
   border: 1px solid #e5e7eb;
   border-radius: 12px;
   width: 23%;
@@ -330,7 +229,7 @@
 }
 
 .bar {
-  height: 6px;
+  height: 4px;
   border-radius: 4px;
   margin-right: 2px;
 }
@@ -341,12 +240,12 @@
 
 .medium {
   background-color: gray;
-  width: 30%;
+  width: 20%;
 }
 
 .light {
   background-color: lightgray;
-  width: 20%;
+  width: 15%;
 }
 
 
@@ -825,3 +724,214 @@ p {
   color: #5e5e5e;
 }
 
+
+
+//Tasks
+.forth-row-container {
+  width: 100%;
+  display: flex;
+  gap: 2.2rem;
+}
+
+.tasks-container {
+  width: 50%;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.tasks-header {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+.tasks-list {
+  max-height: 320px;
+  overflow-y: auto;
+  list-style-type: none;
+  padding: 0 2rem;
+  margin: 0;
+}
+
+.tasks-list::-webkit-scrollbar {
+  width: 8px; /* Adjust width */
+}
+
+.tasks-list::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Track color */
+  border-radius: 10px;
+}
+
+.tasks-list::-webkit-scrollbar-thumb {
+  background: #d2d0d0; /* Scroll thumb color */
+  border-radius: 10px;
+}
+
+.tasks-list::-webkit-scrollbar-thumb:hover {
+  background: #969595; /* Color when hovered */
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+}
+
+.task-item:last-child {
+  border-bottom: none;
+}
+
+.task-checkbox {
+  width: 16px;
+  height: 16px;
+  margin-right: 12px;
+  accent-color: #000; 
+}
+
+.task-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.task-due-date {
+  font-size: 12px;
+  color: #777;
+}
+
+.see-all {
+  border-top: 1px solid #e5e7eb ;
+  margin-top: 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #007bff;
+  cursor: pointer;
+  text-align: right;
+}
+
+//Conversation
+.conversation-container {
+  width: 50%;
+  padding: 1.5rem;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+}
+
+.conversation-header {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.conversation-list {
+  max-height: 300px;
+  overflow-y: auto;
+  list-style-type: none;
+  padding: 0 1rem 0 0;
+}
+
+.conversation-list::-webkit-scrollbar {
+  width: 8px; /* Adjust width */
+}
+
+.conversation-list::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Track color */
+  border-radius: 10px;
+}
+
+.conversation-list::-webkit-scrollbar-thumb {
+  background: #d2d0d0; /* Scroll thumb color */
+  border-radius: 10px;
+}
+
+.conversation-list::-webkit-scrollbar-thumb:hover {
+  background: #969595; /* Color when hovered */
+}
+
+.conversation-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.conversation-item-sent{
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.conversation-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+
+.message-content {
+  background-color: #f5f5f5;
+  padding: 8px 12px;
+  border-radius: 8px;
+  max-width: 70%;
+}
+
+.message-content.received {
+  background-color: #f5f5f5;
+}
+
+.message-content.sent {
+  background-color: #ffe8c6;
+}
+
+.message-sender {
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.message-text {
+  font-size: 14px;
+  color: #333;
+}
+
+.message-time {
+  font-size: 12px;
+  color: #777;
+  margin-left: 8px;
+  align-self: flex-start;
+}
+
+.message-input-container {
+  display: flex;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.message-input {
+  flex-grow: 1;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-right: 8px;
+}
+
+.send-button {
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #ff5b5b;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.send-button:hover {
+  background-color: #ff3b3b;
+}

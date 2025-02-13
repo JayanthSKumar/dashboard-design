@@ -8,6 +8,7 @@ import { CommonModule } from '@angular/common';
 import { NgxChartsModule, ScaleType } from '@swimlane/ngx-charts';
 import { ColorHelper } from '@swimlane/ngx-charts';
 import { SlickCarouselComponent, SlickCarouselModule } from 'ngx-slick-carousel';
+import { FormsModule } from '@angular/forms'
 
 
 @Component({
@@ -15,58 +16,9 @@ import { SlickCarouselComponent, SlickCarouselModule } from 'ngx-slick-carousel'
   standalone: true,
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
-  imports:[NgChartsModule, MatIconModule, NgxEchartsModule, CommonModule, NgxChartsModule, SlickCarouselModule]
+  imports:[NgChartsModule, MatIconModule, NgxEchartsModule, CommonModule, NgxChartsModule, SlickCarouselModule, FormsModule]
 })
 export class DashboardComponent {
-
-  // barChartData = {
-  //   labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-  //   datasets: [
-  //     {
-  //       label: 'Profit',
-  //       data: [-5, -10, 5, 15, -10, -15],
-  //       backgroundColor: ['#FF5B5B', '#FF5B5B', '#28A745', '#28A745', '#FF5B5B', '#FF5B5B'],
-  //       borderWidth: 0
-  //     }
-  //   ]
-  // };
-
-  // // Data for pie chart (Total Growth)
-  // pieChartData = {
-  //   labels: ['Growth'],
-  //   datasets: [
-  //     {
-  //       data: [12, 88], // 12% growth and remaining 88%
-  //       backgroundColor: ['#28A745', '#007BFF']
-  //     }
-  //   ]
-  // };
-
-  // pieChartOptions = {
-  //   cutout: '75%'
-  // };
-
-  // barChartOptions = {
-  //   responsive: true,
-  //   maintainAspectRatio: false,
-  //   scales: {
-  //     x: {
-  //       display: false
-  //     },
-  //     y: {
-  //       display: false
-  //     }
-  //   },
-  //   plugins: {
-  //     legend: {
-  //       display: false
-  //     }
-  //   }
-  // };
-
-
-
-
 
   public barChartData: ChartConfiguration['data'] = {
     labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
@@ -142,10 +94,10 @@ export class DashboardComponent {
     maintainAspectRatio: false,
     plugins: {
       tooltip: {
-        enabled: false // Disable tooltips for minimalistic design
+        enabled: false 
       },
       legend: {
-        display: false // Hide legend
+        display: false 
       }
     },
     // cutout: '75%' // Set cutout size for the inner circle
@@ -155,9 +107,9 @@ export class DashboardComponent {
 
 
   
-  activeTab: 'users' | 'projects' = 'users'; // ✅ Track selected tab
+  activeTab: 'users' | 'projects' = 'users'; // Track selected tab
 
-  // ✅ Chart Data
+  // Chart Data
   usersData = {
     xAxis: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
     thisYear: [10000, 8000, 12000, 15000, 25000, 18000, 22000],
@@ -185,9 +137,9 @@ export class DashboardComponent {
         type: 'category',
         boundaryGap: false,
         data: data.xAxis,
-        axisLine: { show: false }, // ✅ Hides the x-axis line
-        splitLine: { show: false }, // ✅ Removes x-axis grid lines
-        axisTick: { show: false }, // ✅ Hides small ticks on the x-axis
+        axisLine: { show: false }, //  Hides the x-axis line
+        splitLine: { show: false }, // Removes x-axis grid lines
+        axisTick: { show: false }, //  Hides small ticks on the x-axis
         axisLabel: { fontSize: 12, color: '#666' }
       },
       yAxis: { type: 'value', axisLine: { show: false }, splitLine: { lineStyle: { color: '#eee' } } },
@@ -220,12 +172,12 @@ export class DashboardComponent {
 
   //Traffic Data
   trafficData = [
-    { name: 'Google', width: '40%' },
-    { name: 'YouTube', width: '70%' },
-    { name: 'Instagram', width: '50%' },
-    { name: 'Pinterest', width: '80%' },
-    { name: 'Facebook', width: '45%' },
-    { name: 'Twitter', width: '60%' },
+    { name: 'Google', width: '30%' },
+    { name: 'YouTube', width: '35%' },
+    { name: 'Instagram', width: '40%' },
+    { name: 'Pinterest', width: '25%' },
+    { name: 'Facebook', width: '22%' },
+    { name: 'Twitter', width: '37%' },
   ];
 
 
@@ -257,11 +209,10 @@ export class DashboardComponent {
     domain: ['#4285F4', '#34A853', '#FB8C00', '#E0E0E0'],
     name: 'custom',
     selectable: true,
-    group: ScaleType.Ordinal // ✅ Use ScaleType.Ordinal instead of 'Ordinal'
+    group: ScaleType.Ordinal // Use ScaleType.Ordinal instead of 'Ordinal'
   };
 
   animations = true;
-
 
 
 
@@ -525,4 +476,225 @@ export class DashboardComponent {
       },
     ],
   }
+
+
+  //Tasks
+  tasks = [
+    {
+      title: 'Draft the new contract document for sales team',
+      dueDate: '24 Aug, 2019',
+      completed: false,
+    },
+    {
+      title: 'iOS App home page',
+      dueDate: '23 Aug, 2019',
+      completed: false,
+    },
+    {
+      title: 'Write a release note for Shreyu',
+      dueDate: '22 Aug, 2019',
+      completed: false,
+    },
+    {
+      title: 'Invite Greeva to a project shreyu admin',
+      dueDate: '21 Aug, 2019',
+      completed: false,
+    },
+    {
+      title: 'Enable analytics tracking for main website',
+      dueDate: '20 Aug, 2019',
+      completed: false,
+    },
+    {
+      title: 'Draft the new contract document for sales team',
+      dueDate: '24 Aug, 2019',
+      completed: false,
+    },
+    {
+      title: 'iOS App home page',
+      dueDate: '23 Aug, 2019',
+      completed: false,
+    },
+    {
+      title: 'Write a release note for Shreyu',
+      dueDate: '22 Aug, 2019',
+      completed: false,
+    },
+    {
+      title: 'Invite Greeva to a project shreyu admin',
+      dueDate: '21 Aug, 2019',
+      completed: false,
+    },
+    {
+      title: 'Enable analytics tracking for main website',
+      dueDate: '20 Aug, 2019',
+      completed: false,
+    },
+    {
+      title: 'Draft the new contract document for sales team',
+      dueDate: '24 Aug, 2019',
+      completed: false,
+    },
+    {
+      title: 'iOS App home page',
+      dueDate: '23 Aug, 2019',
+      completed: false,
+    },
+    {
+      title: 'Write a release note for Shreyu',
+      dueDate: '22 Aug, 2019',
+      completed: false,
+    },
+    {
+      title: 'Invite Greeva to a project shreyu admin',
+      dueDate: '21 Aug, 2019',
+      completed: false,
+    },
+    {
+      title: 'Enable analytics tracking for main website',
+      dueDate: '20 Aug, 2019',
+      completed: false,
+    },
+    {
+      title: 'Draft the new contract document for sales team',
+      dueDate: '24 Aug, 2019',
+      completed: false,
+    },
+    {
+      title: 'iOS App home page',
+      dueDate: '23 Aug, 2019',
+      completed: false,
+    },
+    {
+      title: 'Write a release note for Shreyu',
+      dueDate: '22 Aug, 2019',
+      completed: false,
+    },
+    {
+      title: 'Invite Greeva to a project shreyu admin',
+      dueDate: '21 Aug, 2019',
+      completed: false,
+    },
+    {
+      title: 'Enable analytics tracking for main website',
+      dueDate: '20 Aug, 2019',
+      completed: false,
+    },
+    {
+      title: 'Draft the new contract document for sales team',
+      dueDate: '24 Aug, 2019',
+      completed: false,
+    },
+    {
+      title: 'iOS App home page',
+      dueDate: '23 Aug, 2019',
+      completed: false,
+    },
+    {
+      title: 'Write a release note for Shreyu',
+      dueDate: '22 Aug, 2019',
+      completed: false,
+    },
+    {
+      title: 'Invite Greeva to a project shreyu admin',
+      dueDate: '21 Aug, 2019',
+      completed: false,
+    },
+    {
+      title: 'Enable analytics tracking for main website',
+      dueDate: '20 Aug, 2019',
+      completed: false,
+    },
+    {
+      title: 'Draft the new contract document for sales team',
+      dueDate: '24 Aug, 2019',
+      completed: false,
+    },
+    {
+      title: 'iOS App home page',
+      dueDate: '23 Aug, 2019',
+      completed: false,
+    },
+    {
+      title: 'Write a release note for Shreyu',
+      dueDate: '22 Aug, 2019',
+      completed: false,
+    },
+    {
+      title: 'Invite Greeva to a project shreyu admin',
+      dueDate: '21 Aug, 2019',
+      completed: false,
+    },
+    {
+      title: 'Enable analytics tracking for main website',
+      dueDate: '20 Aug, 2019',
+      completed: false,
+    },
+  ];
+
+  toggleTask(task: any) {
+    task.completed = !task.completed;
+  }
+
+  //Conversation
+  messages = [
+    {
+      sender: 'Geneva',
+      text: 'Hello!',
+      time: '10:00',
+      avatar: 'https://cdn-icons-png.flaticon.com/512/8090/8090406.png',
+      type: 'received',
+    },
+    {
+      sender: 'You',
+      text: 'Hi, How are you? What about our next meeting?',
+      time: '10:01',
+      avatar: 'https://mir-s3-cdn-cf.behance.net/project_modules/disp/ce54bf11889067.562541ef7cde4.png',
+      type: 'sent',
+    },
+    {
+      sender: 'Geneva',
+      text: 'Yeah everything is fine',
+      time: '10:01',
+      avatar: 'https://cdn-icons-png.flaticon.com/512/8090/8090406.png',
+      type: 'received',
+    },
+    {
+      sender: 'You',
+      text: "Wow that's great",
+      time: '10:02',
+      avatar: 'https://mir-s3-cdn-cf.behance.net/project_modules/disp/ce54bf11889067.562541ef7cde4.png',
+      type: 'sent',
+    },
+    {
+      sender: 'Geneva',
+      text: 'How Are You',
+      time: '10:03',
+      avatar: 'https://cdn-icons-png.flaticon.com/512/8090/8090406.png',
+      type: 'received',
+    },
+    {
+      sender: 'You',
+      text: "Good",
+      time: '10:03',
+      avatar: 'https://mir-s3-cdn-cf.behance.net/project_modules/disp/ce54bf11889067.562541ef7cde4.png',
+      type: 'sent',
+    },
+  ];
+
+  newMessage: string = '';
+
+  sendMessage() {
+    if (this.newMessage.trim()) {
+      this.messages.push({
+        sender: 'You',
+        text: this.newMessage,
+        time: new Date().toLocaleTimeString().slice(0, 5),
+        avatar: 'https://mir-s3-cdn-cf.behance.net/project_modules/disp/ce54bf11889067.562541ef7cde4.png',
+        type: 'sent',
+      });
+      this.newMessage = '';
+    }
+  } 
+
 }

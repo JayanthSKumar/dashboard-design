@@ -32,7 +32,7 @@
           </div>
             
           <div class="content">
-            <h2 class="order-count">13.4</h2>
+            <h2 class="order-count">$13.4k</h2>
             <p class="order-label">Total Sales</p>
           </div>
           <div class="footer">
@@ -200,8 +200,60 @@
 
       </div>
 
-      
+    </div>
 
+    <div class="forth-row-container">
+      <div class="tasks-container">
+        <h2 class="tasks-header">Tasks</h2>
+        <ul class="tasks-list">
+          <li class="task-item" *ngFor="let task of tasks">
+            <input
+              type="checkbox"
+              class="task-checkbox"
+              [checked]="task.completed"
+              (change)="toggleTask(task)"
+            />
+            <div>
+              <div class="task-title">{{ task.title }}</div>
+              <div class="task-due-date">Due on {{ task.dueDate }}</div>
+            </div>
+          </li>
+        </ul>
+        <button class="see-all-btn">
+          SEE ALL →
+        </button>      
+      </div>   
+      
+      <div class="conversation-container">
+        <h2 class="conversation-header">Recent Conversations</h2>
+        <div class="conversation-list">
+          <div *ngFor="let message of messages" class="conversation-item" [ngClass]="{'conversation-item-sent': message.type == 'sent'}">
+            <div style="display: flex; flex-direction: column;">
+              <img
+                [src]="message.avatar"
+                class="conversation-avatar"
+                alt="User avatar"
+              />
+              <span class="message-time">{{ message.time }}</span>
+            </div>
+
+            <div class="message-content" [ngClass]="message.type">
+              <div class="message-sender">{{ message.sender }}</div>
+              <div class="message-text">{{ message.text }}</div>
+            </div>
+          </div>
+        </div>
+        <div class="message-input-container">
+          <input
+            type="text"
+            placeholder="Enter your text"
+            class="message-input"
+            [(ngModel)]="newMessage"
+          />
+          <button class="send-button" (click)="sendMessage()">Send</button>
+        </div>
+      </div>
+      
     </div>
 
     <!-- <div class="best-selling-container">
